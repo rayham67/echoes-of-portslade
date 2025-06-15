@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Echoes of Portslade</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 0.5em 1em;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Echoes of Portslade</h1>
+  <p>Click the button below to listen.</p>
+  <button onclick="speak()">▶️ Play</button>
+
+  <script>
+    function speak() {
+      const text = `
+Welcome to "Echoes of Portslade" – the podcast where we explore the past that shapes our present. I'm your host, and today we're diving into the charming, historic heart of Portslade – a village that has stood the test of time, brick by brick, lane by lane. Let's take a journey through conservation, community, and the stories etched in stone.
+
+Segment 1: Portslade Old Village – A Conservation Gem
+Back in 1974, Portslade Old Village was designated as a conservation area – and for good reason. Nestled just northwest of Brighton, this little enclave preserves a layout and character that dates back centuries. Think flint cottages, narrow lanes, and a pace of life that whispers of medieval times. This designation wasn't just about protecting buildings – it was about preserving identity.
+
+Segment 2: Listed Buildings – Stories Behind the Stone
+Let’s stop for a moment at the Portslade Railway Station. Built in 1840, it’s more than just a stop on the line – it’s a symbol of the town’s transformation during the industrial age. With its Italianate arches and enduring brickwork, it still welcomes commuters today, bridging past and present.
+
+Then there’s Portslade Old Manor – a true gem. Dating to the 12th century, this Grade II listed site is one of Sussex’s oldest surviving manor houses. It’s been through centuries of change, neglect, and revival. Today, it's a space where community history comes to life through tours, events, and storytelling.
+
+Segment 3: The People Powering Preservation
+So who’s keeping this legacy alive? It’s not just laws and councils – it’s the people. Local groups like the Friends of Portslade Old Manor and history buffs across the village are hosting heritage walks, organizing fundraisers, and getting kids involved through school projects. Every effort is a stitch in the fabric of this living history.
+
+Segment 4: Why It Matters
+In a fast-changing world, places like Portslade remind us of our roots. Conservation isn’t just about freezing time – it’s about moving forward with awareness. These buildings, these streets, they’re not relics – they’re the soul of the community.
+
+Thanks for listening to Echoes of Portslade. If you enjoyed this journey through history, consider supporting your local heritage group – or just take a stroll through the village and look a little closer. Until next time, keep the past alive.
+      `;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 1; // you can adjust speed here
+      speechSynthesis.speak(utterance);
+    }
+  </script>
+</body>
+</html>
